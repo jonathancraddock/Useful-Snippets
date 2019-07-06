@@ -27,6 +27,14 @@ Name:   mail99.example.com
 Address: xxx:xxx:xxx:xxx::xx
 ```
 
+## Linux Misc.
+
+Check details/availability of an uninstalled package:
+```bash
+sudo apt-get update
+apt-cache showpkg <NAME OF PACKAGE>
+```
+
 ## OpenSSL
 Check certificate dates from a command line:
 ```bash
