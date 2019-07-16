@@ -35,6 +35,14 @@ sudo apt-get update
 apt-cache showpkg <NAME OF PACKAGE>
 ```
 
+## NMAP
+
+Check if a specified port is open:
+```bash
+sudo nmap -sS -Pn -p 25 x.x.x.x
+```
+^- in this example, is port 25 listening?
+
 ## OpenSSL
 Check certificate dates from a command line:
 ```bash
