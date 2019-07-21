@@ -35,6 +35,12 @@ sudo apt-get update
 apt-cache showpkg <NAME OF PACKAGE>
 ```
 
+Check folder sizes from current location:
+```bash
+du -chd 1 | sort -h
+```
+^- size of each folder (only 1 level deep) sorted by size, plus a final total.
+
 ## NMAP
 
 Check if a specified port is open:
