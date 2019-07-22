@@ -27,6 +27,12 @@ Name:   mail99.example.com
 Address: xxx:xxx:xxx:xxx::xx
 ```
 
+## Excel
+
+Date to day of week:  
+`=text(CELL,"dddd")`  
+^- where CELL is a date value.
+
 ## Linux Misc.
 
 Check details/availability of an uninstalled package:
