@@ -124,3 +124,10 @@ Check WiFi password:
 ```dos
 netsh wlan show profiles name="SSID" key=clear
 ```
+
+## Xen Server
+SSH to Xen server and make an ISO available in a new storage repository:
+```bash
+xe sr-create name-label="MyISORepository" type=iso device-config:location=/var/opt/iso/ device-config:legacy_mode=true content-type=iso
+```
+^- *having ssh'd to the server, downloaded an ISO (wget, etc, to for example, /var/opt/iso/), the command above will make it available as a new storage repository.*
