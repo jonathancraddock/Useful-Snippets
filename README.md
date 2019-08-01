@@ -110,8 +110,9 @@ quit
 
 Query TLS using OpenSSL:
 ```bash
-openssl s_client -connect mail99.example.com:25 -starttls smtp
+openssl s_client -connect mail99.example.com:25 -name yourfqdn.com -starttls smtp
 ```
+^- note, the SMTP `EHLO` will default to "mail.example.com" unless you add a `-name` switch. I discovered this after spending some time attempting to diagnose blacklisting issues... and I don't think this is highlighted in many online examples. If you add a `-debug` switch you can observe this behaviour in the hex dump.
 
 ## Windows 10
 Diagnosing WiFi issues for a user, if you are able to remotely access a command line on their laptop:
