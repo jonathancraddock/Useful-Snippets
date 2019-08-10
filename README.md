@@ -1,6 +1,13 @@
 # Useful Snippets
 Some personal notes on a few all too easily forgotten commands.
 
+## Browsers
+Force "reader" mode in Firefox for site with malformed tags and where the icon doesn't automatically appear. (Often sidesteps simple javascript blocking of adblock, etc.)
+```
+about:reader?url=
+```
+^- *paste full url at the end*
+
 ## DNS
 Query an MX record (example):
 ```bash
@@ -45,7 +52,7 @@ Check folder sizes from current location:
 ```bash
 du -chd 1 | sort -h
 ```
-^- size of each folder (only 1 level deep) sorted by size, plus a final total.
+^- *size of each folder (only 1 level deep) sorted by size, plus a final total.*
 
 ## NMAP
 
