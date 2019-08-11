@@ -18,7 +18,7 @@ else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
 fi
 ```
-^- un-comment the `force_color_prompt` setting, and towards the end of each `PS1` line there is a lower-case "w" (full path) which I've changed to an upper-case "W" (only the current directory).
+^- *un-comment the `force_color_prompt` setting, and towards the end of each `PS1` line there is a lower-case "w" (full path) which I've changed to an upper-case "W" (only the current directory).*
 
 ## Browsers
 Force "reader" mode in Firefox for site with malformed tags, and where the icon doesn't automatically appear. (Often sidesteps simple javascript blocking of adblock, etc.)
