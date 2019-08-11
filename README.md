@@ -1,8 +1,27 @@
 # Useful Snippets
-Some personal notes on a few all too easily forgotten commands.
+Some personal notes, to cut down on spent on searching for this stuff! ;-)
+
+## Bash Prompt
+The default Bash user prompt on most of my VMs seems set to display the entire path to your working directory. A few layers deep and you're at the end of the line before you start typing. I prefer colours on, and display only the top-level of the folder.  
+`sudo nano ~/.bashrc`
+
+```bash
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+force_color_prompt=yes
+
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\W\$ '
+fi
+```
+^- un-comment the `force_color_prompt` setting, and towards the end of each `PS1` line there is a lower-case "w" (full path) which I've changed to an upper-case "W" (only the current directory).
 
 ## Browsers
-Force "reader" mode in Firefox for site with malformed tags and where the icon doesn't automatically appear. (Often sidesteps simple javascript blocking of adblock, etc.)
+Force "reader" mode in Firefox for site with malformed tags, and where the icon doesn't automatically appear. (Often sidesteps simple javascript blocking of adblock, etc.)
 ```
 about:reader?url=
 ```
@@ -38,7 +57,7 @@ Address: xxx:xxx:xxx:xxx::xx
 
 Date to day of week:  
 `=text(CELL,"dddd")`  
-^- where CELL is a date value.
+^- *where CELL is a date value.*
 
 ## Linux Misc.
 
@@ -60,7 +79,7 @@ Check if a specified port is open:
 ```bash
 sudo nmap -sS -Pn -p 25 x.x.x.x
 ```
-^- in this example, is port 25 listening?
+^- *in this example, is port 25 listening?*
 
 ## OpenSSL
 Check certificate dates from a command line:
