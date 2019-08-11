@@ -1,5 +1,5 @@
 # Useful Snippets
-Some personal notes, to cut down on spent on searching for this stuff! ;-)
+Some personal notes, to cut down on time spent searching for this stuff! ;-)
 
 ## Bash Prompt
 The default Bash user prompt on most of my VMs seems set to display the entire path to your working directory. A few layers deep and you're at the end of the line before you start typing. I prefer colours on, and display only the top-level of the folder.  
