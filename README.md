@@ -81,6 +81,11 @@ sudo nmap -sS -Pn -p 25 x.x.x.x
 ```
 ^- *in this example, is port 25 listening?*
 
+Check for supported TLS version / ciphers:
+```bash
+sudo nmap -Pn -p 25 --script ssl-enum-ciphers x.x.x.x
+```
+
 ## OpenSSL
 Check certificate dates from a command line:
 ```bash
