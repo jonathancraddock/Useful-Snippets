@@ -92,6 +92,11 @@ Check certificate dates from a command line:
 echo | openssl s_client -connect jonathancraddock.com:443 -servername jonathancraddock.com 2>/dev/null | openssl x509 -noout -dates
 ```
 
+Read a TLS certificate:
+```bash
+openssl x509 -in certificate.crt -text -noout
+```
+
 View available ciphers:
 ```bash
 openssl ciphers -s -tls1_2
