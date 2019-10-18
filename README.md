@@ -1,8 +1,27 @@
 # Useful Snippets
 Some personal notes, to cut down on time spent searching for this stuff! ;-)
 
+## Apt
+Couple of useful `apt` syntax examples.
+
+```bash
+sudo apt-get update
+apt-cache showpkg <<package>>
+```  
+^- check details/availability of an uninstalled package:
+
+```bash
+apt policy <<package>>
+```
+^- summary info
+
+```bash
+apt show <<package>>
+```
+^- detailed info
+
 ## Bash Prompt
-The default Bash user prompt on most of my VMs seems set to display the entire path to your working directory. A few layers deep and you're at the end of the line before you start typing. I prefer colours on, and display only the top-level of the folder.  
+The default Bash user prompt on most of my VMs seems set to display the entire path to your working directory. A few layers deep and you're at the end of the line before you actually start typing. I prefer colours on, and display only the top-level of the folder.  
 `sudo nano ~/.bashrc`
 
 ```bash
@@ -60,12 +79,6 @@ Date to day of week:
 ^- *where CELL is a date value.*
 
 ## Linux Misc.
-
-Check details/availability of an uninstalled package:
-```bash
-sudo apt-get update
-apt-cache showpkg <NAME OF PACKAGE>
-```
 
 Check folder sizes from current location:
 ```bash
