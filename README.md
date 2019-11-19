@@ -142,12 +142,12 @@ get-aduser "firstname.lastname" -properties PasswordLastSet
 ```
 
 ## PuTTY
-Confirming a server fingerprint from the console, prior to connecting with PuTTY - for example:
+Confirming a server fingerprint from the (physical/virtual) console, prior to connecting with PuTTY - for example:
 ```bash
 cd /etc/ssh
-sudo ssh-keygen -E -lf ssh_host_rsa_key.pub
+sudo ssh-keygen -E md5 -l -f ssh_host_rsa_key.pub
 ```
-^- *Note the "-lf" switch above is Lima-Foxtrot, lowercase.*
+^- *Note the "-l -f" switches above are "Lima" and "Foxtrot", lowercase.*
 
 ## SMTP / Telnet / OpenSSL
 View SMTP header using Telnet:
