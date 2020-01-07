@@ -105,6 +105,17 @@ Check certificate dates from a command line:
 echo | openssl s_client -connect jonathancraddock.com:443 -servername jonathancraddock.com 2>/dev/null | openssl x509 -noout -dates
 ```
 
+Generate a CSR
+```bash
+openssl req -new -newkey rsa:2048 -nodes -keyout example.key -out example.csr
+```
+^- *req*uest for *new key* using *2048 bit RSA*, not encrypted, hence *no DES*. And *.key* is the PRIVATE key and *.csr* is the request. (Country code, "GB", or refer to: https://www.digicert.com/ssl-certificate-country-codes.htm )
+
+Check a CSR
+```bash
+openssl req -in example.csr -noout -text
+```
+
 Read a TLS certificate:
 ```bash
 openssl x509 -in certificate.crt -text -noout
@@ -116,7 +127,7 @@ openssl ciphers -s -tls1_2
 ```
 ^- *in this example, list only the ciphers available if TLS1.2 is negotiated.*
 
-For an A+ rating on the https://globalsign.ssllabs.com/ SSL checker, using only TLS v1.2 and with no "weak" cipher suites, I found I could enable:
+For an A+ rating (at the time of writing) on the https://globalsign.ssllabs.com/ SSL checker, using only TLS v1.2 and with no "weak" cipher suites, I found I could enable:
 
 * ECDHE-ECDSA-AES256-GCM-SHA384:
 * ECDHE-RSA-AES256-GCM-SHA384:
