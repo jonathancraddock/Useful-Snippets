@@ -160,6 +160,13 @@ sudo ssh-keygen -E md5 -l -f ssh_host_rsa_key.pub
 ```
 ^- *Note the "-l -f" switches above are "Lima" and "Foxtrot", lowercase.*
 
+## Sed
+Simple find and replace in a text file:
+```bash
+sed -i -e 's/find/replace/g' readme.md
+```
+^- *-i process the file **inline**, -e **expression** (and the spaces matter!), -s **substitute**, followed by the "**find**" and "**replace**" strings, g to indicate a **global** replace. The filename is specified at the end of the command.*
+
 ## SMTP / Telnet / OpenSSL
 View SMTP header using Telnet:
 ```bash
