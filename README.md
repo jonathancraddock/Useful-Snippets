@@ -182,6 +182,19 @@ openssl s_client -connect mail99.example.com:25 -name yourfqdn.com -starttls smt
 ^- note, the SMTP `EHLO` will default to "mail.example.com" unless you add a `-name` switch. I discovered this after spending some time attempting to diagnose blacklisting issues... and I don't think this is highlighted in many online examples. If you add a `-debug` switch you can observe this behaviour in the hex dump.  
 https://www.openssl.org/docs/manmaster/man1/s_client.html
 
+## TAR Compressed Backup of Folder
+The syntax is tar, then switches, then destination file, then source folder:
+```bash
+tar -cvzf backup_file.tar.gz /folder/sub-folder
+```
+^- *Here you have **c** - create and **v** -verbose (might be annoying!) with **z** - compress the archive, and **f** - file.*
+
+To extract, use the following command:
+```bash
+tar -xvf backup_file.tar.gz -C /folder/new-folder
+```
+^- *Note the upper-case -C that specifies the destination folder.*
+
 ## Windows 10
 Diagnosing WiFi issues for a user, if you are able to remotely access a command line on their laptop:
 ```dos
