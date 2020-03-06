@@ -152,6 +152,12 @@ See when an AD user last changed their password:
 get-aduser "firstname.lastname" -properties PasswordLastSet
 ```
 
+When was client last seen by WSUS?
+```powershell
+Get-WsusComputer -ComputerUpdateStatus Any -NameIncludes 'lap-'  | Format-Table -autosize > \\some\path\wsus-seen.txt
+```
+^- *assumes the asset name includes 'lap-' and pipe it to a text file.*
+
 ## PuTTY
 Confirming a server fingerprint from the (physical/virtual) console, prior to connecting with PuTTY - for example:
 ```bash
