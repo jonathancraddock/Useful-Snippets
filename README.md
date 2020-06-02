@@ -105,7 +105,7 @@ Check certificate dates from a command line:
 echo | openssl s_client -connect jonathancraddock.com:443 -servername jonathancraddock.com 2>/dev/null | openssl x509 -noout -dates
 ```
 
-Generate a CSR
+#### Generate a CSR
 ```bash
 openssl req -new -newkey rsa:2048 -nodes -keyout example.key -out example.csr
 ```
@@ -219,3 +219,7 @@ SSH to Xen server and make an ISO available in a new storage repository:
 xe sr-create name-label="MyISORepository" type=iso device-config:location=/var/opt/iso/ device-config:legacy_mode=true content-type=iso
 ```
 ^- *having ssh'd to the server, downloaded an ISO (wget, etc, to for example, /var/opt/iso/), the command above will make it available as a new storage repository.*
+
+## Shortcuts
+
+[CSR](#generate-a-csr)
