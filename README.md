@@ -86,6 +86,12 @@ du -chd 1 | sort -h
 ```
 ^- *size of each folder (only 1 level deep) sorted by size, plus a final total.*
 
+Simple recursive find from current location:
+```bash
+find . -name 'mail*'
+```
+^- *recursive by default.*
+
 ## NMAP
 
 Check if a specified port is open:
