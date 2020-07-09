@@ -78,6 +78,10 @@ Date to day of week:
 `=text(CELL,"dddd")`  
 ^- *where CELL is a date value.*
 
+Unhide All Rows:  
+`ctrl+shift+9`  
+^- *select entire sheet first...*
+
 ## Linux Misc.
 
 Check folder sizes from current location:
