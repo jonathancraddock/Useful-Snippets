@@ -98,6 +98,12 @@ find . -name 'mail*'
 
 ## NMAP
 
+Quick scan for hosts on local subnet:
+```bash
+sudo nmap -sn 192.168.1.* --open | grep '('
+```
+^- *sn for a 'ping scan' and '--open' should indicate whether the host is up.*
+
 Check if a specified port is open:
 ```bash
 sudo nmap -sS -Pn -p 25 x.x.x.x
