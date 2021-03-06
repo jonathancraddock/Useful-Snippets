@@ -182,6 +182,15 @@ sudo ssh-keygen -E md5 -l -f ssh_host_rsa_key.pub
 ```
 ^- *Note the "-l -f" switches above are "Lima" and "Foxtrot", lowercase.*
 
+## Regex Recipes
+From a passage of text, find all words that end with "ly":
+```regex
+/[a-zA-Z]{3,99}ly\b/gm
+```
+^- *assumes the words consist of at least one letter + 'ly', and are less than 99 letters long*
+
+In the example above I was looking to perform a find and replace in Notepad++. To perform a replace using the found string, enclose the regex in brackets. Eg/ `([a-zA-Z]{3,99}ly\b)` and use the notation `$1` in the replace field.
+
 ## Sed
 Simple find and replace in a text file:
 ```bash
