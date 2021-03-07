@@ -191,6 +191,12 @@ From a passage of text, find all words that end with "ly":
 
 In the example above I was looking to perform a find and replace in Notepad++. To perform a replace using the found string, enclose the regex in brackets. Eg/ `([a-zA-Z]{3,99}ly\b)` and use the notation `$1` in the replace field.
 
+#### Related Notepad++ Regex Searches
+Find a word, at the beginning of a new line, followed by a space and an open-bracket:
+```regex
+^[a-zA-Z]* \(
+```
+
 ## Sed
 Simple find and replace in a text file:
 ```bash
