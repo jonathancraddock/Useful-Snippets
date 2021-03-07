@@ -199,13 +199,13 @@ Find a word, at the beginning of a new line, followed by a space and an open-bra
 
 To replace a word at the start of the line followed by space and and an open-bracket, with word ~~ open-bracket:
 
-Find what: `(^[a-zA-Z\-]*) \(`  
+Find what: `(^[ a-zA-Z\-]*) \(`  
 Replace with: `$1~~\(`
 
 To replace "word, space, open-bracket, *some word categories*, close-bracket, space" with the same, followed by ~~ again:
 
-Find what: `(^[a-zA-Z0-9\.\~\-\(]*)\) `  
-Replace with: `$1~~`  
+Find what: `(^[ a-zA-Z0-9\.\~\-\(]*)\) `  
+Replace with: `$1\)~~`  
 ^- *Note the "find what" string has a space character at the end.*
 
 Thus, a text based dictionary definition such as:
