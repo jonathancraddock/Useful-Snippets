@@ -271,6 +271,13 @@ xe sr-create name-label="MyISORepository" type=iso device-config:location=/var/o
 ```
 ^- *having ssh'd to the server, downloaded an ISO (wget, etc, to for example, /var/opt/iso/), the command above will make it available as a new storage repository.*
 
+## YouTube-DL
+
+Download audio only and save as an MP3:
+```dos
+youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=***
+```
+
 ## Shortcuts
 
 [CSR](#generate-a-csr)
