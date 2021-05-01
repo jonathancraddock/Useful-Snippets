@@ -294,7 +294,22 @@ Directory of C:\Users\xxx\Videos\youtube
 
 #### AdGuard Home
 
-Possible inconsistent behaviour of downloads whilst running a DNS sinkhole?
+There is some sort of inconsistent behaviour of downloads whilst running a DNS sinkhole. The message below is typical.
+
+```dos
+[youtube] lXgkuM2NhYI: Downloading webpage
+ERROR: unable to download video data: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>
+```
+
+Disabling AdGuard for this client resolves the error, although in the query log nothing is shown as blocked.
+
+```dos
+[youtube] lXgkuM2NhYI: Downloading webpage
+[download] Destination: David Bowie - Heroes (Official Video)-lXgkuM2NhYI.m4a
+[download] 100% of 3.21MiB in 00:00
+[ffmpeg] Correcting container in "David Bowie - Heroes (Official Video)-lXgkuM2NhYI.m4a"
+[ffmpeg] Destination: David Bowie - Heroes (Official Video)-lXgkuM2NhYI.mp3
+```
 
 #### Some syntax examples:
 
@@ -303,8 +318,6 @@ Download audio only and save as an MP3.
 ```dos
 youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=***
 ```
-
-
 
 ## Shortcuts
 
