@@ -273,11 +273,40 @@ xe sr-create name-label="MyISORepository" type=iso device-config:location=/var/o
 
 ## YouTube-DL
 
-Download audio only and save as an MP3:
+Links:
+> YouTube-DL -> https://youtube-dl.org/  
+> Github -> https://github.com/ytdl-org/youtube-dl/  
+> ffmpeg -> https://ffmpeg.org/  
+> ffmpeg builds -> https://www.gyan.dev/ffmpeg/builds/  
+
+For standalone use, it's sufficient to create a folder and copy `youtube-dl.exe` and `ffmpeg.exe` into it. The following example copies the world's best song into the current folder.
+
+```dos
+youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=lXgkuM2NhYI
+
+Directory of C:\Users\xxx\Videos\youtube
+01/05/2021  12:36    <DIR>          .
+01/05/2021  12:36    <DIR>          ..
+16/12/2019  06:16         3,257,497 David Bowie - Heroes (Official Video)-lXgkuM2NhYI.mp3
+09/04/2021  10:16       112,424,960 ffmpeg.exe
+01/05/2021  10:42         8,171,402 youtube-dl.exe
+```
+
+#### AdGuard Home
+
+Possible inconsistent behaviour of downloads whilst running a DNS sinkhole?
+
+#### Some syntax examples:
+
+Download audio only and save as an MP3.
+
 ```dos
 youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=***
 ```
 
+
+
 ## Shortcuts
 
 [CSR](#generate-a-csr)
+[YouTube-DL](#youtube-dl)
