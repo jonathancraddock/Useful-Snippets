@@ -311,7 +311,7 @@ Disabling AdGuard for this client resolves the error, although in the query log 
 [ffmpeg] Destination: David Bowie - Heroes (Official Video)-lXgkuM2NhYI.mp3
 ```
 
-Footnote: appears to be due to a custom filtering rule and currently works ok with it disabled. (1st May 2021)
+Footnote: appears to be due to a custom filtering rule and currently works ok with it disabled; possible delay in the filter log being updated? (1st May 2021)
 
 ```bash
 # ||r*-aige.googlevideo.com^$important
@@ -319,13 +319,14 @@ Footnote: appears to be due to a custom filtering rule and currently works ok wi
 
 #### Some syntax examples:
 
-Download audio only and save as an MP3.
+Download audio only and save as an MP3, download MP4 video in highest available quality.
 
 ```dos
 youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=***
+youtube-dl https://www.youtube.com/watch?v=***
 ```
 
 ## Shortcuts
 
-[CSR](#generate-a-csr)
+[CSR](#generate-a-csr)  
 [YouTube-DL](#youtube-dl)
