@@ -311,6 +311,12 @@ Disabling AdGuard for this client resolves the error, although in the query log 
 [ffmpeg] Destination: David Bowie - Heroes (Official Video)-lXgkuM2NhYI.mp3
 ```
 
+Footnote: appears to be due to a custom filtering rule and currently works ok with it disabled. (1st May 2021)
+
+```bash
+# ||r*-aige.googlevideo.com^$important
+```
+
 #### Some syntax examples:
 
 Download audio only and save as an MP3.
