@@ -96,6 +96,18 @@ find . -name 'mail*'
 ```
 ^- *recursive by default.*
 
+Checking for USB devices:
+```bash
+lsusb
+```
+
+List block storage devices, and query a specific device: (for its UUID, for example)
+```bash
+lsblk
+
+sudo blkid /dev/sda1
+```
+
 ## NMAP
 
 Quick scan for hosts on local subnet:
