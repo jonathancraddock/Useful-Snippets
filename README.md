@@ -46,6 +46,9 @@ about:reader?url=
 ```
 ^- *paste full url at the end*
 
+**LAN Based Web Services**  
+To avoid being forced to prefix local (LAN) web servers with "http(s)" in Firefox, open `about:config` and search for `network.dns.localDomains`.
+
 ## DNS
 Query an MX record (example):
 ```bash
