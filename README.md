@@ -108,6 +108,13 @@ lsblk
 sudo blkid /dev/sda1
 ```
 
+Unattended upgrade config files:
+```bash
+/etc/apt/apt.conf.d/20auto-upgrades
+/etc/apt/apt.conf.d/50unattended-upgrades
+```
+^- *consider removal of old kernals, whether to set an auto-reboot time, etc*
+
 ## NMAP
 
 Quick scan for hosts on local subnet:
