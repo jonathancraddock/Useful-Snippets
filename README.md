@@ -122,6 +122,11 @@ Unattended upgrade config files:
 
 Quick scan for hosts on local subnet:
 ```bash
+sudo nmap -sP -T4 192.168.1.0/24 | grep 'Nmap'
+```
+
+Same, but on a VirtualBox host, although still not reliable:
+```bash
 sudo nmap -sn 192.168.1.* --open | grep '('
 ```
 ^- *sn for a 'ping scan' and '--open' should indicate whether the host is up.*
