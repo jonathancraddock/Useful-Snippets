@@ -1,6 +1,29 @@
 # Useful Snippets
 Some personal notes, to cut down on time spent searching for this stuff! ;-)
 
+## Contents
+[Apt](#apt)  
+[Bash](#bash-prompt)  
+[Browsers](#browsers)  
+[CMD (Dos)](#cmd)  
+[DNS](#dns)  
+[Excel](#excel)  
+[Exchange Powershell](#exchange-powershell)  
+[Linux (misc)](#linux-misc)  
+[Nmap](#nmap)  
+[OpenSSL](#openssl)  
+&nbsp;&nbsp;&nbsp;>[CSR](#generate-a-csr)  
+[Powershell (misc)](#powershell)  
+[PuTTY](#putty)  
+[Sed](#sed)  
+[SMTP](#smtp--telnet--openssl)  
+[Tar](#tar)  
+[Regex Recipes](#regex-recipes)  
+&nbsp;&nbsp;&nbsp;>[Notepad++ Regex](#related-notepad-regex)  
+[Windows 10](#windows-10)  
+[Xen](#xen-server)  
+[YouTube-DL](#youtube-dl)  
+
 ## Apt
 Couple of useful `apt` syntax examples.
 
@@ -240,6 +263,18 @@ SSLOpenSSLConfCmd DHParameters "/etc/ssl/certs/dhparam.pem"
 ```
 
 ## Powershell
+
+Checking trust relationship between laptop and AD:
+```powershell
+Test-ComputerSecureChannel
+
+Test-ComputerSecureChannel -server 'yourDomain.local'
+
+$cred = Get-Credential
+Test-ComputerSecureChannel -credential $cred -repair
+```
+^- *when prompted, the credentials you supply should be authorised to add machines to the domain.*
+
 See when an AD user last changed their password:
 ```powershell
 get-aduser "firstname.lastname" -properties PasswordLastSet
@@ -316,7 +351,7 @@ openssl s_client -connect mail99.example.com:25 -name yourfqdn.com -starttls smt
 ^- note, the SMTP `EHLO` will default to "mail.example.com" unless you add a `-name` switch. I discovered this after spending some time attempting to diagnose blacklisting issues... and I don't think this is highlighted in many online examples. If you add a `-debug` switch you can observe this behaviour in the hex dump.  
 https://www.openssl.org/docs/manmaster/man1/s_client.html
 
-## TAR Compressed Backup of Folder
+## TAR
 The syntax is tar, then switches, then destination file, then source folder:
 ```bash
 tar -cvzf backup_file.tar.gz /folder/sub-folder
@@ -402,8 +437,3 @@ Download audio only and save as an MP3, download MP4 video in highest available 
 youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=***
 youtube-dl https://www.youtube.com/watch?v=***
 ```
-
-## Shortcuts
-
-[CSR](#generate-a-csr)  
-[YouTube-DL](#youtube-dl)
