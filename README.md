@@ -8,17 +8,17 @@ Couple of useful `apt` syntax examples.
 sudo apt-get update
 apt-cache showpkg <<package>>
 ```  
-^- check details/availability of an uninstalled package:
+^- *check details/availability of an uninstalled package*
 
 ```bash
 apt policy <<package>>
 ```
-^- summary info
+^- *summary info*
 
 ```bash
 apt show <<package>>
 ```
-^- detailed info
+^- *detailed info*
 
 ## Bash Prompt
 The default Bash user prompt on most of my VMs seems set to display the entire path to your working directory. A few layers deep and you're at the end of the line before you actually start typing. I prefer colours on, and display only the top-level of the folder.  
@@ -48,6 +48,13 @@ about:reader?url=
 
 **LAN Based Web Services**  
 To avoid being forced to prefix local (LAN) web servers with "http(s)" in Firefox, open `about:config` and search for `network.dns.localDomains`.
+
+## CMD
+
+Mapping a network drive including credentials.
+```dos
+net use T: \\networkShare\Test /u:domainname\username password
+```
 
 ## DNS
 Query an MX record (example):
@@ -84,6 +91,49 @@ Date to day of week:
 Unhide All Rows:  
 `ctrl+shift+9`  
 ^- *select entire sheet first...*
+
+## Exchange Powershell
+
+SMTP forwarding, step 1: (eg/ `externaldom.co.uk`)
+
+The external domain name needs to be added first.
+
+```powershell
+New-RemoteDomain -Name externaldom -DomainName externaldom.co.uk
+
+Get-RemoteDomain externaldom | Select DomainName, AutoForwardEnabled
+
+Remove-RemoteDomain externaldom
+```
+* add an external domain
+* confirm
+* remove (if required)
+
+SMTP forwarding, step 2:
+
+Then forward mailboxes as required. Here mail is delivered **and** forwarded.
+
+```powershell
+Set-Mailbox -Identity "Freduardo.Debargo" -DeliverToMailboxAndForward $true -ForwardingSMTPAddress "freduardo.debargo@externaldom.co.uk"
+
+Get-Mailbox "Freduardo.Debargo" | Format-List ForwardingSMTPAddress, DeliverToMailboxandForward
+```
+^- *enclosing in quotes appears to deal with special characters, like the apostrophe in `O'Connell`, etc.*
+
+SMTP forwarding, step 3:
+
+To cancel...
+
+```powershell
+set-mailbox -identity "Freduardo.Debargo" -DeliverToMailboxAndForward $false
+
+set-mailbox -identity "Freduardo.Debargo" -DeliverToMailboxAndForward $false -ForwardingSmtpAddress $null -forwardingaddress $null
+
+get-mailbox "Freduardo.Debargo" | format-list forwardingsmtpaddress,delivertomailboxandforward
+```
+* just forward the message, don't deliver to local mailbox
+* cancel forwarding altogether
+* confirm
 
 ## Linux Misc.
 
