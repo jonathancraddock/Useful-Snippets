@@ -3,6 +3,7 @@ Some personal notes, to cut down on time spent searching for this stuff! ;-)
 
 ## Contents
 [Apt](#apt)  
+[Audacity](#audacity)  
 [Bash](#bash-prompt)  
 [Browsers](#browsers)  
 [CMD (Dos)](#cmd)  
@@ -42,6 +43,16 @@ apt policy <<package>>
 apt show <<package>>
 ```
 ^- *detailed info*
+
+## Audacity
+
+To automatically insert labels at specified lengths of silence: `Analyze... Silence Finder...`
+
+To remove a label: `Right-click on text portion of label and choose Delete.`
+
+To navigate labels: Forward `<tab>` and Backward `<shift>+<tab>`
+
+To export tracks between labels: `File... Export... Export Multiple...`
 
 ## Bash Prompt
 The default Bash user prompt on most of my VMs seems set to display the entire path to your working directory. A few layers deep and you're at the end of the line before you actually start typing. I prefer colours on, and display only the top-level of the folder.  
