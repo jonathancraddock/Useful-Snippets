@@ -10,6 +10,7 @@ Some personal notes, to cut down on time spent searching for this stuff! ;-)
 [DNS](#dns)  
 [Excel](#excel)  
 [Exchange Powershell](#exchange-powershell)  
+[.htaccess](#htaccess)  
 [Linux (misc)](#linux-misc)  
 [Nmap](#nmap)  
 [OpenSSL](#openssl)  
@@ -126,6 +127,10 @@ Unhide All Rows:
 `ctrl+shift+9`  
 ^- *select entire sheet first...*
 
+Calculate hours between two times that (might) span across midnight:  
+`=(C2-B2+(C2<B2))`  
+^- *here 'b2' is the start-time and 'c2' is the end-time.*
+
 ## Exchange Powershell
 
 SMTP forwarding, step 1: (eg/ `externaldom.co.uk`)
@@ -168,6 +173,20 @@ get-mailbox "Freduardo.Debargo" | format-list forwardingsmtpaddress,delivertomai
 * just forward the message, don't deliver to local mailbox
 * cancel forwarding altogether
 * confirm
+
+## .htaccess
+
+Redirect any URI back to a single 'holding' page:
+```bash
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_URI} !^/logo\.svg$
+RewriteCond %{REQUEST_URI} !^/favicon\.ico$
+RewriteCond %{REQUEST_URI} !^/index\.html$
+RewriteRule ^(.*)$ https://example.com/ [R=301,L]
+```
+^- *For example, a business has closed and every URI needs to redirect back to a single holding page. A few exceptions are required for the favicon, company logo, etc, as well as the default addresses `/` and `/index.html`. The address is rewritten as `/` for consistency. Remember the 301 for a permanent redirect, but you could use a similar strategy for a 'maintenance' page, which might require a 307 temporary redirect.*
 
 ## Linux Misc.
 
