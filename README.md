@@ -188,6 +188,11 @@ RewriteRule ^(.*)$ https://example.com/ [R=301,L]
 ```
 ^- *For example, a business has closed and every URI needs to redirect back to a single holding page. A few exceptions are required for the favicon, company logo, etc, as well as the default addresses `/` and `/index.html`. The address is rewritten as `/` for consistency. Remember the 301 for a permanent redirect, but you could use a similar strategy for a 'maintenance' page, which might require a 307 temporary redirect.*
 
+> Currently untested, but what if the site being redirected to a holding page is using Let's Encrypt, and you need the certificate to be maintained? Could this require an additional condition? Perhaps something along these lines:  
+> `RewriteCond %{REQUEST_URI} !^/.well-known/`  
+> ...and in reading about this syntax, I've now found a suggestion to insert a rule above the existing syntax:  
+> `RewriteRule ^\.well-known/.+ - [END]`
+
 ## Linux Misc.
 
 Check folder sizes from current location:
