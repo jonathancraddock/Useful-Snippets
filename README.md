@@ -10,6 +10,7 @@ Some personal notes, to cut down on time spent searching for this stuff! ;-)
 [DNS](#dns)  
 [Excel](#excel)  
 [Exchange Powershell](#exchange-powershell)  
+[Git](#git)  
 [.htaccess](#htaccess)  
 [Linux (misc)](#linux-misc)  
 [Nmap](#nmap)  
@@ -173,6 +174,24 @@ get-mailbox "Freduardo.Debargo" | format-list forwardingsmtpaddress,delivertomai
 * just forward the message, don't deliver to local mailbox
 * cancel forwarding altogether
 * confirm
+
+## Git
+
+After `git` is installed and updated:
+
+```bash
+git config --global user.name "username"
+git config --global user.email "name@example.com"
+
+git config --list
+```
+^- *the switch --list to confirm info extered correctly*
+
+Clone a repository:
+```bash
+git clone https://github.com/username/repository
+```
+^- *copy link to repository via the `code` button*
 
 ## .htaccess
 
