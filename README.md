@@ -16,6 +16,7 @@ Some personal notes, to cut down on time spent searching for this stuff! ;-)
 [Nmap](#nmap)  
 [OpenSSL](#openssl)  
 &nbsp;&nbsp;&nbsp;>[CSR](#generate-a-csr)  
+[PHP](#php)  
 [Powershell (misc)](#powershell)  
 [PuTTY](#putty)  
 [Sed](#sed)  
@@ -314,6 +315,22 @@ openssl dhparam -out /etc/ssl/certs/dhparam.pem 4096
 ^- *This is going to take a long time... around 5 mins on my $5 Digital Ocean droplet. Assuming you're wanting to include this in your Apache config, see syntax below.*
 ```bash
 SSLOpenSSLConfCmd DHParameters "/etc/ssl/certs/dhparam.pem"
+```
+
+## PHP
+
+Use `php -v` to confirm version. (Command.)
+
+List installed PHP modules:
+```bash
+dpkg --get-selections | grep -i php
+```
+
+Apache:
+```bash
+sudo a2dismod php7.2
+sudo a2enmod php7.4
+sudo systemctl restart apache2
 ```
 
 ## Powershell
