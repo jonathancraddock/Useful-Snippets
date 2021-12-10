@@ -506,5 +506,7 @@ Download audio only and save as an MP3, download MP4 video in highest available 
 
 ```dos
 youtube-dl -x --audio-format mp3 https://www.youtube.com/watch?v=***
+
 youtube-dl https://www.youtube.com/watch?v=***
 ```
+^- *For Twitter video, right-click the video, choose 'copy link', and use the same syntax as above.*
