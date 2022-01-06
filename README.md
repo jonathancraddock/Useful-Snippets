@@ -239,6 +239,17 @@ lsblk
 sudo blkid /dev/sda1
 ```
 
+Reboot and Uptime:
+```bash
+who -b
+```
+^- *or,* `who` *on its own to see logged in users and their connection times*
+
+```bash
+uptime -s
+```
+^- *system up since...*
+
 Unattended upgrade config files:
 ```bash
 /etc/apt/apt.conf.d/20auto-upgrades
@@ -253,11 +264,11 @@ Quick scan for hosts on local subnet:
 sudo nmap -sP -T4 192.168.1.0/24 | grep 'Nmap'
 ```
 
-Same, but on a VirtualBox host, although still not reliable:
+Same, but on a VirtualBox host, although probably not reliable via a virtual switch, etc:
 ```bash
 sudo nmap -sn 192.168.1.* --open | grep '('
 ```
-^- *sn for a 'ping scan' and '--open' should indicate whether the host is up.*
+^- *sn for a 'ping scan' and '--open' might indicate whether the host is up.*
 
 Check if a specified port is open:
 ```bash
