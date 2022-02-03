@@ -10,6 +10,7 @@ Some personal notes, to cut down on time spent searching for this stuff! ;-)
 [DNS](#dns)  
 [Excel](#excel)  
 [Exchange Powershell](#exchange-powershell)  
+[FFMPEG](#ffmpeg)  
 [Git](#git)  
 [.htaccess](#htaccess)  
 [Linux (misc)](#linux-misc)  
@@ -175,6 +176,15 @@ get-mailbox "Freduardo.Debargo" | format-list forwardingsmtpaddress,delivertomai
 * just forward the message, don't deliver to local mailbox
 * cancel forwarding altogether
 * confirm
+
+## FFMPEG
+
+Add soft-subtitles (from .SRT file) to an MP4:
+
+```bash
+ffmpeg -i video.mp4 -i video.srt -c copy -c:s mov_text -metadata:s:s:0 title="English" video_sub.mp4
+```
+^- *available, but not shown by default, and optionally add a *`language=` switch* to the command above...*
 
 ## Git
 
