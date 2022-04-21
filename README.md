@@ -25,6 +25,7 @@ Some personal notes, to cut down on time spent searching for this stuff! ;-)
 [Tar](#tar)  
 [Regex Recipes](#regex-recipes)  
 &nbsp;&nbsp;&nbsp;>[Notepad++ Regex](#related-notepad-regex)  
+[Ubiquiti](#ubiquiti)  
 [Windows 10](#windows-10)  
 [Xen](#xen-server)  
 [YouTube-DL](#youtube-dl)  
@@ -455,6 +456,16 @@ To extract, use the following command:
 tar -xvf backup_file.tar.gz -C /folder/new-folder
 ```
 ^- *Note the upper-case -C that specifies the destination folder.*
+
+## Ubiquiti
+Edge Router X to resolve local DNS names:
+```bash
+configure
+set service dhcp-server hostfile-update enable
+commit
+save
+cat /etc/hosts
+```
 
 ## Windows 10
 Diagnosing WiFi issues for a user, if you are able to remotely access a command line on their laptop:
