@@ -480,6 +480,14 @@ netsh wlan show profiles name="SSID" key=clear
 ```
 
 ## Xen Server
+
+Following an utterly bizarre set of errors after rebooting a Xen hypervisor host (from DNS errors, warnings about no hosts, storage being unavailable, VM needs storage unavailable to host, no block storage available, unable to connect disk, etc, etc) found the following command which completely sorted it all out. No idea why, but matched some suggestions on a Citrix forum.
+
+```bash
+xe vm-cd-eject --multiple
+```
+^- *fixed 3 VMs which refused to start, and a new 'test' VM that I created during nearly 4 hours of diagnostics.* :-/
+
 SSH to Xen server and make an ISO available in a new storage repository:
 ```bash
 xe sr-create name-label="MyISORepository" type=iso device-config:location=/var/opt/iso/ device-config:legacy_mode=true content-type=iso
