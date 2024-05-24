@@ -515,6 +515,12 @@ Directory of C:\Users\xxx\Videos\youtube
 01/05/2021  10:42         8,171,402 youtube-dl.exe
 ```
 
+If you need to convert from `.webm` to `.mp4` the following ffmpeg syntax should take care of that in a few seconds:
+
+```bash
+ffmpeg -i source.webm -c copy destination.mp4
+```
+
 #### AdGuard Home
 
 There is some sort of inconsistent behaviour of downloads whilst running a DNS sinkhole. The message below is typical.
